@@ -1,0 +1,25 @@
+name: Compile usbmuxd2
+on: [push]
+jobs:
+  linux:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Run compile script
+        run: ./compile.sh
+
+      # - uses: actions/upload-artifact@v3
+      #   with:
+      #     name: usbmuxd2
+      #     path: bin/
+
+      - name: Zip usbmuxd2
+        run: zip -r usbmuxd2.zip bin
+
+      - name: Update latest release
+        uses: pyTooling/Actions/releaser@main
+        with:
+          tag: latest
+          token: ${{ secrets.GITHUB_TOKEN }}
+          files: usbmuxd2.zip
