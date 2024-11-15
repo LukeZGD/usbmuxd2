@@ -65,8 +65,8 @@ if [[ $OSTYPE == "linux"* ]]; then
 
     echo "Cloning git repos and other deps"
     git clone https://github.com/lzfse/lzfse
-    git clone https://github.com/libimobiledevice/libplist
-    git clone https://github.com/libimobiledevice/libimobiledevice-glue
+    git clone https://github.com/LukeeGD/libplist
+    git clone https://github.com/LukeeGD/libimobiledevice-glue
     git clone https://github.com/LukeeGD/libusbmuxd
     git clone https://github.com/LukeeGD/libimobiledevice
     git clone https://github.com/tihmstar/libgeneral
